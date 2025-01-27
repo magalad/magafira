@@ -1,0 +1,204 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <script>
+        const password = "aptecka"; // Same password as in password.html
+        if (localStorage.getItem("websiteAccess") !== password) {
+            window.location.href = "password.html"; // Redirect to the password page
+        }
+    </script>
+    
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Our Story - Maga & Fira</title>
+    <link rel="stylesheet" href="style.css">
+    <style>
+        /* Custom styles for the story page */
+        .story-hero {
+            background: url('photos/better.jpg') no-repeat center center/cover;
+            height: 100vh;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            text-align: center;
+        }
+
+        .hero-content {
+            position: absolute;
+            top: 75px;
+            left: 40px;
+            color: rgb(255, 255, 255);
+            font-size: 1.5rem;
+            font-style: italic;
+            text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
+        }
+
+        .center-box {
+            width: 50%; /* Adjust the width for better proportion */
+            background: rgba(255, 255, 255, 0.9);
+            padding: 20px;
+            border-radius: 15px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+            text-align: center;
+
+            /* Centering the box */
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%); /* Perfectly centers the box */
+        }
+
+        .chat-box {
+            width: 100%;
+            height: 200px;
+            margin: 10px auto;
+            background: #f9f9f9;
+            border-radius: 10px;
+            padding: 10px;
+            overflow-y: auto; /* Enable scrolling */
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+            text-align: left;
+            font-family: 'Arial', sans-serif;
+            display: flex;
+            flex-direction: column;
+            gap: 8px;
+            position: relative; /* Required for sticky positioning */
+        }   
+
+        .message {
+            margin: 0; /* Reset margin for better alignment */
+            padding: 8px;
+            border-radius: 10px;
+            max-width: 70%;
+            word-wrap: break-word; /* Ensure messages don't overflow */
+            opacity: 0; /* Hide messages initially */
+            transition: opacity 0.5 ease; /* Smooth fade-in effect */
+        }   
+
+        .maga {
+            background: #00e1ff;
+            align-self: flex-start;
+        }
+
+        .fira {
+            background: #ff9900;
+            align-self: flex-end;
+        }
+
+        .typing-indicator {
+            display: flex;
+            align-items: center;
+            gap: 5px;
+            font-size: 0.9rem;
+            color: #759119;
+            font-style: italic;
+            position: sticky; /* Sticky positioning */
+            top: 0; /* Sticks to the top of the chat box */
+            background: #f9f9f900; /* Matches chat box background */
+            padding: 5px;
+            z-index: 10; /* Ensures it stays above messages */
+            opacity: 0; /* Initially hidden */
+            transition: opacity 0.3s ease;
+        }
+
+        .typing-indicator .dot {
+            width: 6px;
+            height: 6px;
+            background: #000000;
+            border-radius: 50%;
+            animation: blink 1s infinite;
+        }
+
+        .typing-indicator .dot:nth-child(2) {
+            animation-delay: 0.2s;
+        }
+
+        .typing-indicator .dot:nth-child(3) {
+            animation-delay: 0.4s;
+        }
+
+        @keyframes blink {
+            0%, 80%, 100% {
+                opacity: 0;
+            }
+            40% {
+                opacity: 1;
+            }
+        }
+
+    </style>
+</head>
+<body>
+    <header class="hero story-hero">
+        <nav class="navbar">
+            <ul>
+                <li><a href="index.html">Home</a></li>
+                <li><a href="memories.html">Memories</a></li>
+                <li><a href="countdown.html">Countdown</a></li>
+                <li><a href="story.html" class="active">Our Story</a></li>
+            </ul>
+        </nav>
+        <div class="hero-content">
+            Every love story is beautiful, but ours is my favorite.
+        </div>
+        <div class="center-box">
+            <div class="chat-box">
+                <div class="typing-indicator">
+                    <span>Fira is typing</span>
+                    <span class="dot"></span>
+                    <span class="dot"></span>
+                    <span class="dot"></span>
+                </div>
+                <div class="message maga">Hey Fira! Remember our first katok date? 😊</div>
+                <div class="message fira">Of course! It was magical. ❤️ Can't believe how time flies!</div>
+                <div class="message maga">It really does. More adventures await us! 🥰</div>
+                <div class="message fira">Looking forward to every moment with you. 😘</div>
+                <div class="message maga">You know, our first meeting wasn’t even planned. You just had to forget your coat! 😂</div>
+                <div class="message fira">Hey! Don’t make fun of me! It was a perfect excuse for you to finally meet me. 😏</div>
+                <div class="message maga">True... I didn’t even hesitate. I was like, “Let me just grab my coat and go.”</div>
+                <div class="message fira">And you showed up hours before my lesson started. 🥺 That was so sweet.</div>
+                <div class="message maga">Sitting at the top of that rock with you... it felt so simple, but so perfect.</div>
+                <div class="message fira">Yeah, we didn’t need a fancy place. Just us talking about life was enough. ❤️</div>
+                <div class="message maga">By the way, you gave me your bracelet that day...</div>
+                <div class="message fira">OMG, I forgot about that! Did you keep it?</div>
+                <div class="message maga">Of course I did. I keep everything that reminds me of you.</div>
+                <div class="message fira">Stop, you’re making me blush! 😘</div>
+                <div class="message maga">Haha, just being honest. That day will always be special.</div>
+            </div>
+            
+        </div>
+    </header>
+
+    <footer>
+        <p>Made with ❤️ by Maga & Fira</p>
+    </footer>
+
+    <script>
+        document.addEventListener("DOMContentLoaded", () => {
+            const messages = document.querySelectorAll(".message");
+            const typingIndicator = document.querySelector(".typing-indicator");
+            let delay = 0;
+    
+            messages.forEach((message, index) => {
+                setTimeout(() => {
+                    // Determine who is typing based on the message class
+                    const sender = message.classList.contains("maga") ? "Maga" : "Fira";
+                    typingIndicator.querySelector("span").textContent = `${sender} is typing`;
+    
+                    // Show typing indicator
+                    typingIndicator.style.opacity = 1;
+    
+                    // Hide typing indicator and show message after 1.5 seconds
+                    setTimeout(() => {
+                        typingIndicator.style.opacity = 0;
+                        message.style.opacity = 1; // Show the message
+                    }, 1500); // Duration of typing indicator
+                }, delay);
+    
+                delay += 3500; // Adjust this value for delay between messages
+            });
+        });
+    </script>    
+
+</body>
+</html>

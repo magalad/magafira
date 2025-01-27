@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <script>
+        const password = "aptecka"; // Same password as in password.html
+        if (localStorage.getItem("websiteAccess") !== password) {
+            window.location.href = "password.html"; // Redirect to the password page
+        }
+    </script>
+    
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title></title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <header class="hero">
+        <nav class="navbar">
+            <ul>
+                <li><a href="index.html">Home</a></li>
+                <li><a href="memories.html">Memories</a></li>
+                <li><a href="countdown.html">Countdown</a></li>
+                <li><a href="story.html" class="active">Our Story</a></li>
+            </ul>
+        </nav>        
+        <div class="hero-content">
+            <h1>Maga & Fira</h1>
+            <p>We're Celebrating a new year of Love!</p>
+            <h2>01.01.2025</h2>
+        </div>
+    </header>
+
+    <footer>
+        <p>Made with ❤️ by your Faga</p>
+    </footer>
+    <script src="script.js"></script>
+</body>
+</html>
